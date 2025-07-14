@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
-{% load static%}
-
+{% load static %}
 
 {% block title %}
 Daniel
 {% endblock %}
-	<body class="is-preload">
+
+
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
@@ -33,6 +33,14 @@ Daniel
 									<span class="date">April 25, 2017</span>
 									<h2><a href="#">And this is a<br />
 									massive headline</a></h2>
+									{% for place in places %}
+									<h2> {{ place.name }} </h2>
+									<h2> {{ place.description }} </h2>
+									<h2> {{ place.views_count }} </h2>
+									<h2> {{ place.category.name }} </h2>
+									<img src="{{ place.image.url }}" width="500" height="500">
+									{% endfor %}
+
 									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
 									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
 									amet nullam sed etiam veroeros.</p>
@@ -51,7 +59,7 @@ Daniel
 										<h2><a href="#">Sed magna<br />
 										ipsum faucibus</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="{% static 'images/pic02.jpg' %}" alt="" /></a>
+									<a href="#" class="image fit"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
 									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
 									<ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
@@ -137,4 +145,3 @@ Daniel
 					</div>
 
 {% endblock %}
-
